@@ -11,7 +11,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300 z-10">
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[black] text-gray-300 z-10">
       <div>
         <Link to="home" smooth={true} duration={500}>
           <img
@@ -25,27 +25,27 @@ const Navbar = () => {
 
       {/* menu */}
       <ul className="hidden md:flex ">
-        <li className="hover:text-[#2ecc71]">
+        <li className="hover:text-[orange]">
           <Link to="home" smooth={true} duration={500}>
             Inicio
           </Link>
         </li>
-        <li className="hover:text-[#2ecc71]">
+        <li className="hover:text-[orange]">
           <Link to="about" smooth={true} duration={500}>
             Sobre mi
           </Link>
         </li>
-        <li className="hover:text-[#2ecc71]">
+        <li className="hover:text-[orange]">
           <Link to="skills" smooth={true} duration={500}>
             Conocimientos
           </Link>
         </li>
-        <li className="hover:text-[#2ecc71]">
+        <li className="hover:text-[orange]">
           <Link to="works" smooth={true} duration={500}>
             Proyectos
           </Link>
         </li>
-        <li className="hover:text-[#2ecc71]">
+        <li className="hover:text-[orange]">
           <Link to="contact" smooth={true} duration={500}>
             Contacto
           </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
         className={
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
+            : "absolute top-0 left-0 w-full h-screen bg-[black] flex flex-col justify-center items-center"
         }
       >
         <li className="py-6 text-4xl">

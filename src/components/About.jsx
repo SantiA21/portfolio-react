@@ -3,18 +3,18 @@ import Foto from "../assets/fotocarnet.jpg";
 
 const About = () => {
   return (
-    <div name="about" className="w-full h-screen bg-[#0a192f] text-gray-300">
+    <div name="about" className="w-full h-screen bg-[black] text-[white]">
       <div class="flex flex-col justify-center items-center w-full h-full">
         <div class="max-w-[1000px] w-full grid grid-cols-2">
           <div class="sm:text-right pb-8 pl-4">
-            <p className="text-4xl font-bold inline border-b-4 border-[#2ecc71]">
+            <p className="text-4xl font-bold inline border-b-4 border-[orange]">
               Sobre mi
             </p>
           </div>
           <div></div>
         </div>
         <div class="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
-          <div className="sm:text-right text-4xl font-bold text-[#8892b0]">
+          <div className="sm:text-right text-4xl font-bold text-[orange]">
             <p>¡Hola! Me llamo Santiago</p>
           </div>
           <div>
