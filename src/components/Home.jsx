@@ -45,7 +45,7 @@ const Home = () => {
         </div>
         <div className="sm:hidden flex items-center justify-center">
           <img
-            className="rounded-md border-4 border-[#2ecc71]"
+            className="rounded-md border-4 border-[orange]"
             src={Foto}
             alt="foto"
             style={{ width: "250px" }}

@@ -11,7 +11,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[black] text-gray-300 z-10">
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[black] text-gray-300 z-10 border-b-4 border-[white]">
       <div>
         <Link to="home" smooth={true} duration={500}>
           <img
