@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.826a37ee.css",
+    "main.js": "/static/js/main.d0996888.js",
+    "static/media/peliculas.png": "/static/media/peliculas.f29ea60f55931323b76b.png",
+    "static/media/tareas.png": "/static/media/tareas.2b336d7368b19660a4cb.png",
+    "static/media/fotocarnet.jpg": "/static/media/fotocarnet.23d276348b30ccfd8439.jpg",
+    "static/media/nator.png": "/static/media/nator.738d8dab312a6c70200f.png",
+    "static/media/SantiagoNahuelAlmirón.pdf": "/static/media/SantiagoNahuelAlmirón.af800b6c58dfba58b382.pdf",
+    "static/media/kurama1.png": "/static/media/kurama1.6d96080c62e6589890b8.png",
+    "static/media/react.png": "/static/media/react.0cf951a69d8e58f83f9d.png",
+    "static/media/html.png": "/static/media/html.2ba4fabc69a89a8f71e6.png",
+    "static/media/tailwind.png": "/static/media/tailwind.e47ac876b8d4d0bba47a.png",
+    "static/media/css.png": "/static/media/css.69a82c2d9e45c933a9cb.png",
+    "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
+    "static/media/php.png": "/static/media/php.0a564540c19c7189202e.png",
+    "static/media/java.png": "/static/media/java.6c64373d3b7415758078.png",
+    "index.html": "/index.html",
+    "main.826a37ee.css.map": "/static/css/main.826a37ee.css.map",
+    "main.d0996888.js.map": "/static/js/main.d0996888.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.826a37ee.css",
+    "static/js/main.d0996888.js"
+  ]
+}
