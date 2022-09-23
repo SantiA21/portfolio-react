@@ -8,15 +8,15 @@ const Contact = () => {
       name="contact"
       className="w-full h-screen bg-[black] flex justify-center items-center p-4 flex-col"
     >
-      <div className="w-full h-screen bg-[black] flex justify-center items-center p-4 flex-col">
+      <div className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full">
         <form
           name="contact"
           method="POST"
           action="https://getform.io/f/f8f49428-30b3-4e2a-aa02-15a4381ff328"
           className="flex flex-col max-w-[600px] w-full"
         >
-          <div className="pb-8">
-            <p className="text-4xl font-bold inline border-b-4 border-[orange] text-[white]">
+          <div className="pb-8 md:pt-0">
+            <p className="text-4xl font-bold inline border-b-4 border-[orange] text-[white] ">
               Contacto
             </p>
             <p className="text-gray-300 py-4">
@@ -50,8 +50,8 @@ const Contact = () => {
             Enviar
           </button>
         </form>
-        <div className="sm:hidden flex-row w-full">
-          <ul className="md:hidden flex items-center justify-center">
+        <div className="sm:hidden flex-row w-screen bg-[black] h-full">
+          <ul className="md:hidden flex items-center justify-center w-full">
             <li className="w-[60px] h-[60px] flex items-center bg-blue-600">
               <a
                 className="flex items-center w-full text-gray-300"
@@ -82,7 +82,6 @@ const Contact = () => {
           </ul>
         </div>
       </div>
-      <p className="text-gray-300">© 2022 Santh - All Rights Reserved.</p>
     </div>
   );
 };

@@ -12,9 +12,12 @@ import MySQL from "../assets/SQL.png";
 
 const Skills = () => {
   return (
-    <div name="skills" className=" w-full h-screen bg-[black]  text-[white]">
+    <div
+      name="skills"
+      className=" w-full h-full bg-[black]  text-[white] md:h-screen"
+    >
       {/* Container */}
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full ">
         <div>
           <p className="text-4xl font-bold inline border-b-4 border-[orange]">
             Conocimientos
@@ -56,7 +59,11 @@ const Skills = () => {
             <p className="my-4">.NET</p>
           </div>
           <div className="shadow-md shadow-[orange] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto mt-[14%]" src={Python} alt="Python icon" />
+            <img
+              className="w-20 mx-auto mt-[14%]"
+              src={Python}
+              alt="Python icon"
+            />
             <p className="my-4">Python</p>
           </div>
           <div className="shadow-md shadow-[orange] hover:scale-110 duration-500">
@@ -64,7 +71,11 @@ const Skills = () => {
             <p className="my-4">PHP</p>
           </div>
           <div className="shadow-md shadow-[orange] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto mt-[25%]" src={MySQL} alt="MySQL icon" />
+            <img
+              className="w-20 mx-auto mt-[25%]"
+              src={MySQL}
+              alt="MySQL icon"
+            />
             <p className="my-4">MySQL</p>
           </div>
         </div>

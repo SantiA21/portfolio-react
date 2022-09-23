@@ -7,7 +7,7 @@ const Works = () => {
   return (
     <div
       name="works"
-      className="w-full md:h-screen text-[white] bg-[black] pt-5 sm:pt-0"
+      className="w-full md:h-screen text-[white] bg-[black] pt-20 sm:pt-0"
     >
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pb-1">

@@ -1,10 +1,29 @@
 import { type } from "@testing-library/user-event/dist/type";
-import React from "react";
+import Typewriter from "typewriter-effect";
+import React, { useState } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-scroll";
 import Foto from "../assets/fotocarnet.jpg";
+import { motion } from "framer-motion";
+import Kurama from "../assets/kurama1.png";
 
 const Home = () => {
+  const [state] = useState({
+    title: "Desarollador Frontend",
+  });
+  const imagenAnimada = {
+    hidden: {
+      y: "100vh",
+    },
+    show: {
+      y: "0",
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div name="home" className="w-full h-screen bg-[#000000]">
       {/* Container */}
@@ -12,10 +31,18 @@ const Home = () => {
         <div className="px-8 flex flex-col justify-center h-full">
           <p className="text-gray-300">Hola, mi nombre es</p>
           <h1 className="text-4xl sm:text-7xl font-bold text-[orange]">
-            Santiago Almirón
+            <Typewriter
+              options={{
+                autoStart: true,
+                loop: true,
+                typeSpeed: 90,
+                backSpeed: 60,
+                strings: ["Santiago Almirón"],
+              }}
+            />
           </h1>
           <h2 className="text-4xl sm:text-7xl font-bold text-[white]">
-            Desarrollador frontend
+            {state.title}
           </h2>
           <div>
             <Link to="about" smooth={true} duration={500}>
@@ -50,6 +77,18 @@ const Home = () => {
             alt="foto"
             style={{ width: "250px" }}
           />
+        </div>
+        <div className="hidden lg:flex fixed bottom-[0%] right-0 ">
+          <motion.div>
+            <motion.p variants={imagenAnimada} initial="hidden" animate="show">
+              <img
+                className=""
+                style={{ width: "350px" }}
+                src={Kurama}
+                alt="kurama"
+              />
+            </motion.p>
+          </motion.div>
         </div>
       </div>
     </div>
