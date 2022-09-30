@@ -15,6 +15,10 @@
   }
 }
 
+body {
+  background-color: black;
+}
+
 .content-div {
   background-repeat: no-repeat;
   background-size: cover;

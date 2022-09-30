@@ -78,7 +78,7 @@ const Home = () => {
             style={{ width: "250px" }}
           />
         </div>
-        <div className="hidden lg:flex fixed bottom-[0%] right-0 ">
+        <div className="hidden km:flex fixed bottom-[0%] right-0 ">
           <motion.div>
             <motion.p variants={imagenAnimada} initial="hidden" animate="show">
               <img

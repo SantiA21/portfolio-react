@@ -3,6 +3,13 @@ import Nator from "../assets/nator.png";
 import Tareas from "../assets/tareas.png";
 import Peliculas from "../assets/peliculas.png";
 import Pokedex from "../assets/pokedex.png";
+import ReactImg from "../assets/react.png";
+import HTML from "../assets/html.png";
+import CSS from "../assets/css.png";
+import JavaScript from "../assets/javascript.png";
+import Php from "../assets/php.png";
+import Tailwind from "../assets/tailwind.png";
+import MySQL from "../assets/SQL.png";
 
 const Works = () => {
   return (
@@ -18,17 +25,44 @@ const Works = () => {
           <p className="py-6 text-gray-300">Trabajos realizados</p>
         </div>
         {/* Container */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
           {/* Grid Item */}
+          <div
+            style={{ backgroundImage: `url(${Pokedex})` }}
+            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
+          >
+            {/* Hover Effect */}
+            <div className="opacity-0 group-hover:opacity-100">
+              <div className="flex flex-row">
+                <img className="w-[60px]" src={ReactImg} alt="" />
+                <img className="w-[60px]" src={HTML} alt="" />
+                <img className="w-[60px]" src={Tailwind} alt="" />
+              </div>
+              <div className="pt-8 text-center">
+                <a href="https://pokedex-reactapi.netlify.app" target="__blank">
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
+                    Demo
+                  </button>
+                </a>
+                <a href="https://github.com/SantiA21/pokedex" target="__blank">
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
+                    Code
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
           <div
             style={{ backgroundImage: `url(${Peliculas})` }}
             className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Pagina web con ReactJS
-              </span>
+            <div className="opacity-0 group-hover:opacity-100 flex flex-col">
+              <div className="flex flex-row">
+                <img className="w-[60px]" src={ReactImg} alt="" />
+                <img className="w-[60px]" src={HTML} alt="" />
+                <img className="w-[60px]" src={CSS} alt="" />
+              </div>
               <div className="pt-8 text-center">
                 <a
                   href="https://pelisprueba-react.netlify.app"
@@ -54,10 +88,14 @@ const Works = () => {
             className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
           >
             {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Pagina web con HTML, CSS, JS y PHP
-              </span>
+            <div className="opacity-0 group-hover:opacity-100 ">
+              <div className="grid grid-cols-4 m-3 ">
+                <img className="w-[60px]" src={JavaScript} alt="" />
+                <img className="w-[60px]" src={HTML} alt="" />
+                <img className="w-[60px]" src={CSS} alt="" />
+                <img className="w-[80px]" src={Php} alt="" />
+                <img className="w-[80px]" src={MySQL} alt="" />
+              </div>
               <div className="pt-8 text-center">
                 <a href="https://github.com/SantiA21/NATOR" target="__blank">
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
@@ -73,37 +111,16 @@ const Works = () => {
           >
             {/* Hover Effect */}
             <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Pagina web con HTML, CSS y PHP
-              </span>
+              <div className="flex flex-row">
+                <img className="w-[80px]" src={Php} alt="" />
+                <img className="w-[60px]" src={HTML} alt="" />
+                <img className="w-[60px]" src={CSS} alt="" />
+              </div>
               <div className="pt-8 text-center">
                 <a
                   href="https://github.com/SantiA21/Task-Manager"
                   target="__blank"
                 >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${Pokedex})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Pokedex con ReactJS, Tailwind
-              </span>
-              <div className="pt-8 text-center">
-                <a href="https://pokedex-reactapi.netlify.app" target="__blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a href="https://github.com/SantiA21/pokedex" target="__blank">
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
                     Code
                   </button>
