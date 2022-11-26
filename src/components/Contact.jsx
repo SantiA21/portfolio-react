@@ -14,10 +14,7 @@ const Contact = () => {
       name="contact"
       className="w-full h-screen bg-[black] flex justify-center items-center p-4 flex-col"
     >
-      <div
-        data-aos="zoom-in"
-        className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full"
-      >
+      <div data-aos="zoom-in" className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full">
         <form
           name="contact"
           method="POST"
@@ -35,6 +32,7 @@ const Contact = () => {
               Intentare contestar a la brevedad.
             </p>
           </div>
+
           <input
             className="bg-[#ccd6f6] p-2 rounded-md"
             type="text"

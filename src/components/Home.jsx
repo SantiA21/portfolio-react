@@ -6,8 +6,14 @@ import { Link } from "react-scroll";
 import Foto from "../assets/fotocarnet.jpg";
 import { motion } from "framer-motion";
 import Kurama from "../assets/kurama1.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   const [state] = useState({
     title: "Desarollador Frontend",
   });
@@ -55,7 +61,10 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="hidden sm:flex items-center justify-center">
+        <div
+          data-aos="fade-left"
+          className="hidden sm:flex items-center justify-center"
+        >
           <img
             className="rounded-md border-4 border-[orange]"
             src={Foto}

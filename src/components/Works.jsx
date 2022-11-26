@@ -25,7 +25,7 @@ const Works = () => {
       className="w-full md:h-screen text-[white] bg-[black] pt-20 sm:pt-0"
     >
       <div
-        data-aos="fade-up"
+        
         className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full"
       >
         <div className="pb-1">
@@ -35,7 +35,7 @@ const Works = () => {
           <p className="py-6 text-gray-300">Trabajos realizados</p>
         </div>
         {/* Container */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+        <div data-aos="fade-up" className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
           {/* Grid Item */}
           <div
             style={{ backgroundImage: `url(${Weather})` }}
