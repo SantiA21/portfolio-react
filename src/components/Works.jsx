@@ -10,14 +10,21 @@ import JavaScript from "../assets/javascript.png";
 import Php from "../assets/php.png";
 import Tailwind from "../assets/tailwind.png";
 import MySQL from "../assets/SQL.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Works = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <div
       name="works"
       className="w-full md:h-screen text-[white] bg-[black] pt-20 sm:pt-0"
+
     >
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+      <div data-aos="fade-up" className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pb-1">
           <p className="text-4xl font-bold inline border-b-4 text-[white] border-[orange]">
             Proyectos

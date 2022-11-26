@@ -1,14 +1,23 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <div
       name="contact"
       className="w-full h-screen bg-[black] flex justify-center items-center p-4 flex-col"
     >
-      <div className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full">
+      <div
+        data-aos="zoom-in"
+        className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full"
+      >
         <form
           name="contact"
           method="POST"

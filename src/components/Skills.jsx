@@ -9,8 +9,14 @@ import NET from "../assets/NET.png";
 import Python from "../assets/python.png";
 import Php from "../assets/php.png";
 import MySQL from "../assets/SQL.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Skills = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <div
       name="skills"
@@ -25,7 +31,10 @@ const Skills = () => {
           <p className="py-4 text-gray-300">Tecnologias con las que trabaje</p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-5 gap-4 text-center py-8">
+        <div
+          data-aos="fade-up"
+          className="w-full grid grid-cols-2 sm:grid-cols-5 gap-4 text-center py-8"
+        >
           <div className="shadow-md shadow-[orange] hover:scale-110 duration-500">
             <img className="w-20 mx-auto" src={HTML} alt="HTML icon" />
             <p className="my-4">HTML</p>
