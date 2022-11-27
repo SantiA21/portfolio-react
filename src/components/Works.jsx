@@ -4,6 +4,7 @@ import Tareas from "../assets/tareas.png";
 import Peliculas from "../assets/peliculas.png";
 import Pokedex from "../assets/pokedex.png";
 import Weather from "../assets/apiweather.png";
+import Cars from "../assets/autos.png";
 import ReactImg from "../assets/react.png";
 import HTML from "../assets/html.png";
 import CSS from "../assets/css.png";
@@ -14,6 +15,11 @@ import MySQL from "../assets/SQL.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Card from "./Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Works = () => {
   useEffect(() => {
@@ -22,12 +28,9 @@ const Works = () => {
   return (
     <div
       name="works"
-      className="w-full md:h-screen text-[white] bg-[black] pt-20 sm:pt-0"
+      className="md:max-w-[1080px] w-full m-auto  h-full bg-[black]  text-[white] md:h-screen"
     >
-      <div
-        
-        className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full"
-      >
+      <div className=" mx-auto p-4 flex flex-col justify-center  h-full">
         <div className="pb-1">
           <p className="text-4xl font-bold inline border-b-4 text-[white] border-[orange]">
             Proyectos
@@ -35,136 +38,142 @@ const Works = () => {
           <p className="py-6 text-gray-300">Trabajos realizados</p>
         </div>
         {/* Container */}
-        <div data-aos="fade-up" className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+        <div data-aos="fade-up" className="">
           {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${Weather})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div "
-          >
-            {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100 ">
-              <div className="flex flex-row">
-                <img className="w-[60px]" src={ReactImg} alt="" />
-                <img className="w-[60px]" src={HTML} alt="" />
-                <img className="w-[60px]" src={CSS} alt="" />
-              </div>
-              <div className="pt-8 text-center">
-                <a href="https://appiopenweather.netlify.app" target="__blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
+          <div className="px-0 py-20 md:max-w-[1040px] max-w-[500px]">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={10}
+              slidesPerView={5}
+              navigation
+              breakpoints={{
+                // when window width is >= 340px
+                340: {
+                  width: 200,
+                  slidesPerView: 1,
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 768,
+                  slidesPerView: 4,
+                },
+                // when window width is >= 1040px
+                1040: {
+                  width: 1040,
+                  slidesPerView: 5,
+                },
+              }}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card image={Cars} />
+                <div className="flex flex-row justify-evenly w-auto">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a href="https://autosreactjs.netlify.app" target="__blank">
+                      Demo
+                    </a>
                   </button>
-                </a>
-                <a
-                  href="https://github.com/SantiA21/openweatherapi"
-                  target="__blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/AutosReactJS"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
                   </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${Pokedex})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <div className="flex flex-row">
-                <img className="w-[60px]" src={ReactImg} alt="" />
-                <img className="w-[60px]" src={HTML} alt="" />
-                <img className="w-[60px]" src={Tailwind} alt="" />
-              </div>
-              <div className="pt-8 text-center">
-                <a href="https://pokedex-reactapi.netlify.app" target="__blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card image={Weather} />
+                <div className="flex flex-row justify-evenly">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://appiopenweather.netlify.app"
+                      target="__blank"
+                    >
+                      Demo
+                    </a>
                   </button>
-                </a>
-                <a href="https://github.com/SantiA21/pokedex" target="__blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/openweatherapi"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
                   </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${Peliculas})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100 flex flex-col">
-              <div className="flex flex-row">
-                <img className="w-[60px]" src={ReactImg} alt="" />
-                <img className="w-[60px]" src={HTML} alt="" />
-                <img className="w-[60px]" src={CSS} alt="" />
-              </div>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://pelisprueba-react.netlify.app"
-                  target="__blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card image={Pokedex} />
+                <div className="flex flex-row justify-evenly">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://pokedex-reactapi.netlify.app"
+                      target="__blank"
+                    >
+                      Demo
+                    </a>
                   </button>
-                </a>
-                <a
-                  href="https://github.com/SantiA21/movies-react"
-                  target="__blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/pokedex"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
                   </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${Nator})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100 ">
-              <div className="grid grid-cols-4 m-3 ">
-                <img className="w-[60px]" src={JavaScript} alt="" />
-                <img className="w-[60px]" src={HTML} alt="" />
-                <img className="w-[60px]" src={CSS} alt="" />
-                <img className="w-[80px]" src={Php} alt="" />
-                <img className="w-[80px]" src={MySQL} alt="" />
-              </div>
-              <div className="pt-8 text-center">
-                <a href="https://github.com/SantiA21/NATOR" target="__blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card image={Peliculas} />
+                <div className="flex flex-row justify-evenly ">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://pelisprueba-react.netlify.app"
+                      target="__blank"
+                    >
+                      Demo
+                    </a>
                   </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${Tareas})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <div className="flex flex-row">
-                <img className="w-[80px]" src={Php} alt="" />
-                <img className="w-[60px]" src={HTML} alt="" />
-                <img className="w-[60px]" src={CSS} alt="" />
-              </div>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://github.com/SantiA21/Task-Manager"
-                  target="__blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/movies-react"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
                   </button>
-                </a>
-              </div>
-            </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card image={Nator} />
+                <div className="flex flex-row justify-evenly ">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/NATOR"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
+                  </button>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card image={Tareas} />
+                <div className="flex flex-row justify-evenly ">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/Task-Manager"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
+                  </button>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>
