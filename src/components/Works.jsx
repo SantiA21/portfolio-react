@@ -5,6 +5,7 @@ import Peliculas from "../assets/peliculas.png";
 import Pokedex from "../assets/pokedex.png";
 import Weather from "../assets/apiweather.png";
 import Cars from "../assets/autos.png";
+import Portfolio from "../assets/portfolio.png";
 import ReactImg from "../assets/react.png";
 import HTML from "../assets/html.png";
 import CSS from "../assets/css.png";
@@ -67,7 +68,17 @@ const Works = () => {
               onSwiper={(swiper) => console.log(swiper)}
             >
               <SwiperSlide className="bg-[white] rounded-xl">
-                <Card image={Cars} />
+                <Card make="Drive" image={Cars} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={CSS} alt="/" />
+                </div>
                 <div className="flex flex-row justify-evenly w-auto">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
                     <a href="https://autosreactjs.netlify.app" target="__blank">
@@ -85,7 +96,17 @@ const Works = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="bg-[white] rounded-xl">
-                <Card image={Weather} />
+                <Card make="OpenWeather API" image={Weather} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={CSS} alt="/" />
+                </div>
                 <div className="flex flex-row justify-evenly">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
                     <a
@@ -106,7 +127,17 @@ const Works = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="bg-[white] rounded-xl">
-                <Card image={Pokedex} />
+                <Card make="Pokedex API" image={Pokedex} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={Tailwind} alt="/" />
+                </div>
                 <div className="flex flex-row justify-evenly">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
                     <a
@@ -127,7 +158,40 @@ const Works = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="bg-[white] rounded-xl">
-                <Card image={Peliculas} />
+                <Card make="Portfolio" image={Portfolio} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={Tailwind} alt="/" />
+                </div>
+                <div className="flex flex-row justify-evenly w-auto">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/portfolio-react"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
+                  </button>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card make="Catalogo de peliculas" image={Peliculas} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={CSS} alt="/" />
+                </div>
                 <div className="flex flex-row justify-evenly ">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
                     <a
@@ -148,7 +212,19 @@ const Works = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="bg-[white] rounded-xl">
-                <Card image={Nator} />
+                <Card make="Nator Furniture" image={Nator} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={CSS} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={JavaScript} alt="/" />
+                  <img className="w-[50px] h-[30px]" src={Php} alt="/" />
+                </div>
                 <div className="flex flex-row justify-evenly ">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
                     <a
@@ -161,7 +237,18 @@ const Works = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="bg-[white] rounded-xl">
-                <Card image={Tareas} />
+                <Card make="Task Manager" image={Tareas} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={CSS} alt="/" />
+                  <img className="w-[50px] h-[30px]" src={Php} alt="/" />
+                </div>
                 <div className="flex flex-row justify-evenly ">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
                     <a
