@@ -14,7 +14,10 @@ const Contact = () => {
       name="contact"
       className="w-full h-screen bg-[black] flex justify-center items-center p-4 flex-col"
     >
-      <div data-aos="zoom-in" className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full">
+      <div
+        data-aos="zoom-in"
+        className="w-screen h-screen bg-[black] flex justify-center items-center p-4 flex-col mt-20 md:mt-0 md:w-full"
+      >
         <form
           name="contact"
           method="POST"
@@ -27,7 +30,7 @@ const Contact = () => {
             </p>
             <p className="text-gray-300 py-4">
               Actualmente me encuentro en busca de un empleo como desarrollador,
-              dado que aun no tengo experiencia. Mi bandeja de entrada esta
+              dado que aún no tengo experiencia. Mi bandeja de entrada esta
               siempre disponible, ya sea para una consulta u oferta laboral,
               Intentare contestar a la brevedad.
             </p>

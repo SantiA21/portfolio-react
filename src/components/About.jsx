@@ -38,9 +38,10 @@ const About = () => {
               bachillerato en Economía y Administración. Al finalizarlo, decidí
               dedicarme a programar desde el 2020 cuando comencé mi carrera de
               Técnico en Programación de Computadoras en la Universidad de Lomas
-              de Zamora. Me considero una persona autodidacta, responsable y
-              colaboradora. En mis momentos libres suelo jugar videojuegos y ver
-              anime. Uno de mis deportes favoritos es el fútbol.
+              de Zamora, así finalizándola en 2022. Me considero una persona
+              autodidacta, responsable y colaboradora. En mis momentos libres
+              suelo jugar videojuegos y ver anime. Uno de mis deportes favoritos
+              es el fútbol.
             </p>
           </div>
         </div>
