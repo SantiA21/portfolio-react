@@ -1,4 +1,5 @@
 import React from "react";
+import Cloud from "../assets/cloudpage.png";
 import Nator from "../assets/nator.png";
 import Tareas from "../assets/tareas.png";
 import Peliculas from "../assets/peliculas.png";
@@ -67,6 +68,34 @@ const Works = () => {
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
+              <SwiperSlide className="bg-[white] rounded-xl">
+                <Card make="Cloud Page" image={Cloud} />
+                <div className="flex flex-row justify-center">
+                  <img
+                    className="w-[30px] h-[30px]"
+                    src={ReactImg}
+                    alt="/"
+                    size={25}
+                  />
+                  <img className="w-[30px] h-[30px]" src={HTML} alt="/" />
+                  <img className="w-[30px] h-[30px]" src={Tailwind} alt="/" />
+                </div>
+                <div className="flex flex-row justify-evenly w-auto">
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a href="https://autosreactjs.netlify.app" target="__blank">
+                      Demo
+                    </a>
+                  </button>
+                  <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
+                    <a
+                      href="https://github.com/SantiA21/cloud-page"
+                      target="__blank"
+                    >
+                      Code
+                    </a>
+                  </button>
+                </div>
+              </SwiperSlide>
               <SwiperSlide className="bg-[white] rounded-xl">
                 <Card make="Drive" image={Cars} />
                 <div className="flex flex-row justify-center">
