@@ -82,7 +82,10 @@ const Works = () => {
                 </div>
                 <div className="flex flex-row justify-evenly w-auto">
                   <button className="text-[black] p-1 hover:bg-orange-600 hover:rounded-md hover:text-[white]">
-                    <a href="https://autosreactjs.netlify.app" target="__blank">
+                    <a
+                      href="https://react-cloudpage.netlify.app"
+                      target="__blank"
+                    >
                       Demo
                     </a>
                   </button>
