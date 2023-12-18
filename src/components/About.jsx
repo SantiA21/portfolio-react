@@ -32,7 +32,7 @@ const About = () => {
           </div>
           <div>
             <p>
-              Tengo 20 años y soy desarrollador Frontend junior. Actualmente
+              Tengo 21 años y soy desarrollador Frontend junior. Actualmente
               resido en la provincia de Buenos Aires, Argentina. Comencé mi
               secundario en el 2014 y finalicé en 2019 así obteniendo mi
               bachillerato en Economía y Administración. Al finalizarlo, decidí

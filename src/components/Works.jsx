@@ -30,7 +30,7 @@ const Works = () => {
   return (
     <div
       name="works"
-      className="md:max-w-[1080px] w-full m-auto  h-full bg-[black]  text-[white] md:h-screen"
+      className="md:max-w-[1080px] w-full m-auto  h-full bg-[black]  text-[white] md:h-screen py-20"
     >
       <div className=" mx-auto p-4 flex flex-col justify-center  h-full">
         <div className="pb-1">
@@ -42,7 +42,7 @@ const Works = () => {
         {/* Container */}
         <div data-aos="fade-up" className="">
           {/* Grid Item */}
-          <div className="px-0 py-20 md:max-w-[1040px] max-w-[500px]">
+          <div className="px-0  md:max-w-[1040px] max-w-[500px]">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={10}
