@@ -106,7 +106,9 @@ const Navbar = () => {
             Contacto
           </Link>
         </li>
-        <li className="py-6 text-4xl">Mi CV</li>
+        <a href={CV} target="__blank" className="text-4xl py-6">
+          Mi CV
+        </a>
       </ul>
 
       {/* Social icons */}
