@@ -24,25 +24,38 @@ const Navbar = () => {
       </div>
 
       {/* menu */}
+
       <ul className="hidden md:flex">
-        <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
-          Inicio
-        </li>
-        <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
-          Sobre mi
-        </li>
-        <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
-          Experiencia
-        </li>
-        <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
-          Conocimientos
-        </li>
-        <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
-          Proyectos
-        </li>
-        <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
-          Contacto
-        </li>
+        <Link to="home" smooth={true} duration={500}>
+          <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
+            Inicio
+          </li>
+        </Link>
+        <Link to="about" smooth={true} duration={500}>
+          <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
+            Sobre mi
+          </li>
+        </Link>
+        <Link to="experience" smooth={true} duration={500}>
+          <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
+            Experiencia
+          </li>
+        </Link>
+        <Link to="skills" smooth={true} duration={500}>
+          <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
+            Conocimientos
+          </li>
+        </Link>
+        <Link to="works" smooth={true} duration={500}>
+          <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
+            Proyectos
+          </li>
+        </Link>
+        <Link to="contact" smooth={true} duration={500}>
+          <li className="hover:text-[white] hover:bg-[orange] hover:rounded-sm">
+            Contacto
+          </li>
+        </Link>
       </ul>
 
       {/* Hamburguer */}
