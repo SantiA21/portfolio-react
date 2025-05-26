@@ -10,22 +10,26 @@ import { Button } from "@/components/ui/button"
 export function ContactSection() {
   const { t } = useLanguage()
 
+  const handleEmailClick = () => {
+    window.location.href = "mailto:santiago.n.almiron@gmail.com"
+  }
+
   const contactMethods = [
     {
       icon: Mail,
       label: t("contact.email"),
       value: "santiago.n.almiron@gmail.com",
-      href: "mailto:santiago.n.almiron@gmail.com",
-      color: "text-purple-400",
-      bgColor: "bg-purple-500/10",
+      onClick: handleEmailClick,
+      color: "text-blue-400",
+      bgColor: "bg-blue-500/10",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "almiron-santiago-nahuel",
       href: "https://www.linkedin.com/in/almiron-santiago-nahuel/",
-      color: "text-blue-400",
-      bgColor: "bg-blue-500/10",
+      color: "text-cyan-400",
+      bgColor: "bg-cyan-500/10",
     },
     {
       icon: Github,
@@ -48,8 +52,8 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-32 relative">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       </div>
 
       <div className="container relative z-10">
@@ -76,7 +80,8 @@ export function ContactSection() {
                 const content = (
                   <div
                     key={index}
-                    className="flex items-center gap-4 p-4 rounded-lg bg-zinc-800/30 hover:bg-zinc-800/50 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-zinc-800/30 hover:bg-zinc-800/50 transition-all duration-300 group cursor-pointer"
+                    onClick={method.onClick}
                   >
                     <div
                       className={`w-12 h-12 rounded-full ${method.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
@@ -94,12 +99,16 @@ export function ContactSection() {
                   <Link
                     key={index}
                     href={method.href}
-                    target={method.href.startsWith("http") ? "_blank" : undefined}
-                    rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block hover:scale-105 transition-transform duration-300"
                   >
                     {content}
                   </Link>
+                ) : method.onClick ? (
+                  <div key={index} className="block hover:scale-105 transition-transform duration-300">
+                    {content}
+                  </div>
                 ) : (
                   <div key={index} className="block">
                     {content}
@@ -111,13 +120,11 @@ export function ContactSection() {
             {/* Botones de acción */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0 text-white px-8 py-3"
-                asChild
+                className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-500 hover:to-blue-500 border-0 text-white px-8 py-3"
+                onClick={handleEmailClick}
               >
-                <Link href="mailto:santiago.n.almiron@gmail.com">
-                  <Mail className="mr-2 h-5 w-5" />
-                  {t("contact.sendEmail")}
-                </Link>
+                <Mail className="mr-2 h-5 w-5" />
+                {t("contact.sendEmail")}
               </Button>
               <Button
                 variant="outline"
@@ -129,21 +136,6 @@ export function ContactSection() {
                   {t("contact.viewResume")}
                 </Link>
               </Button>
-            </div>
-
-            {/* Información adicional */}
-            <div className="mt-8 pt-8 border-t border-zinc-800 text-center">
-              <h4 className="text-lg font-medium mb-4">{t("contact.workingHours")}</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-400">
-                <div>
-                  <div className="font-medium text-zinc-300">{t("contact.timezone")}</div>
-                  <div>GMT-3 (Buenos Aires)</div>
-                </div>
-                <div>
-                  <div className="font-medium text-zinc-300">{t("contact.responseTime")}</div>
-                  <div>{t("contact.responseTimeValue")}</div>
-                </div>
-              </div>
             </div>
           </GlassmorphicCard>
 
@@ -175,16 +167,15 @@ export function ContactSection() {
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="mailto:santiago.n.almiron@gmail.com">
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white w-16 h-16"
-                >
-                  <Mail className="h-8 w-8" />
-                  <span className="sr-only">Email</span>
-                </Button>
-              </Link>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white w-16 h-16"
+                onClick={handleEmailClick}
+              >
+                <Mail className="h-8 w-8" />
+                <span className="sr-only">Email</span>
+              </Button>
             </div>
           </div>
         </div>

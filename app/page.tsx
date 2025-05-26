@@ -14,20 +14,7 @@ import { ProjectsSection } from "@/components/projects-section"
 import { ContactSection } from "@/components/contact-section"
 import { useLanguage } from "@/hooks/use-language"
 import Link from "next/link"
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  Database,
-  Globe,
-  Palette,
-  Zap,
-  Coffee,
-  Settings,
-  Layers,
-  Cpu,
-} from "lucide-react"
+import { Github, Linkedin, Mail, Database, Globe, Palette, Zap, Coffee, Settings, Layers, Cpu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // Componentes SVG personalizados para Python y PHP
@@ -64,6 +51,10 @@ const PHPIcon = () => (
 )
 
 export default function Portfolio() {
+  const handleEmailClick = () => {
+    window.location.href = "mailto:santiago.n.almiron@gmail.com"
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
       <MouseFollower />
@@ -77,9 +68,9 @@ export default function Portfolio() {
         </div>
 
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
 
         <HeroSection />
@@ -162,7 +153,7 @@ function SkillsSection() {
     <section id="skills" className="py-32 relative">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       </div>
 
       <div className="container relative z-10">
@@ -184,8 +175,8 @@ function ExperienceSection() {
   return (
     <section id="experience" className="py-32 relative">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       </div>
 
       <div className="container relative z-10">
@@ -223,14 +214,14 @@ function EducationSection() {
 function FooterSection() {
   const { t } = useLanguage()
 
+  const handleEmailClick = () => {
+    window.location.href = "mailto:santiago.n.almiron@gmail.com"
+  }
+
   return (
     <footer className="border-t border-zinc-800 py-12">
       <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
-          <Link href="/" className="font-bold text-xl">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Santiago</span>
-            <span className="text-white">Almirón</span>
-          </Link>
           <p className="text-sm text-zinc-500 mt-2">
             © {new Date().getFullYear()} Santiago Almirón. {t("footer.rights")}
           </p>
@@ -256,26 +247,15 @@ function FooterSection() {
               <span className="sr-only">LinkedIn</span>
             </Button>
           </Link>
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-            >
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Button>
-          </Link>
-          <Link href="mailto:santiago.n.almiron@gmail.com">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-            >
-              <Mail className="h-5 w-5" />
-              <span className="sr-only">Email</span>
-            </Button>
-          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+            onClick={handleEmailClick}
+          >
+            <Mail className="h-5 w-5" />
+            <span className="sr-only">Email</span>
+          </Button>
         </div>
       </div>
     </footer>

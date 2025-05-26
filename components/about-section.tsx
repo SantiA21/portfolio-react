@@ -17,8 +17,8 @@ export function AboutSection() {
   return (
     <section id="about" className="py-32 relative">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
       </div>
 
       <div className="container relative z-10">
@@ -26,7 +26,7 @@ export function AboutSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-70"></div>
+            <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl opacity-70"></div>
             <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
               <img src="/images/profile.jpg" alt="Santiago Almirón" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -67,7 +67,7 @@ export function AboutSection() {
               <div className="mt-8">
                 <Button
                   onClick={handleViewCV}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0 text-white"
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-500 hover:to-blue-500 border-0 text-white"
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   {t("about.downloadResume")}
