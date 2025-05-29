@@ -1,21 +1,24 @@
-import { type NextRequest, NextResponse } from "next/server"
-import { Resend } from "resend"
+import { type NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, subject, message } = await request.json()
+    const { name, email, subject, message } = await request.json();
 
     // Validación básica
     if (!name || !email || !subject || !message) {
-      return NextResponse.json({ error: "Todos los campos son requeridos" }, { status: 400 })
+      return NextResponse.json(
+        { error: "Todos los campos son requeridos" },
+        { status: 400 }
+      );
     }
 
     // Validación de email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json({ error: "Email inválido" }, { status: 400 })
+      return NextResponse.json({ error: "Email inválido" }, { status: 400 });
     }
 
     // Enviar email usando Resend
@@ -63,11 +66,17 @@ export async function POST(request: NextRequest) {
         </div>
       `,
       replyTo: email,
-    })
+    });
 
-    return NextResponse.json({ message: "Email enviado exitosamente", id: data.id }, { status: 200 })
+    return NextResponse.json(
+      { message: "Email enviado exitosamente", id: data.id },
+      { status: 200 }
+    );
   } catch (error) {
-    console.error("Error enviando email:", error)
-    return NextResponse.json({ error: "Error interno del servidor" }, { status: 500 })
+    console.error("Error enviando email:", error);
+    return NextResponse.json(
+      { error: "Error interno del servidor" },
+      { status: 500 }
+    );
   }
 }

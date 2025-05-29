@@ -1,16 +1,24 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
 
-type Language = "en" | "es"
+type Language = "en" | "es";
 
 interface LanguageContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
 const translations = {
   en: {
@@ -26,7 +34,8 @@ const translations = {
     // Hero Section
     "hero.role": "Web Developer",
     "hero.greeting": "Hi, I'm",
-    "hero.description": "I craft exceptional digital experiences with code, creativity, and a passion for innovation.",
+    "hero.description":
+      "I craft exceptional digital experiences with code, creativity, and a passion for innovation.",
     "hero.viewProjects": "View Projects",
     "hero.contactMe": "Contact Me",
 
@@ -58,18 +67,23 @@ const translations = {
     "projects.natorFurniture.description":
       "E-commerce platform for furniture sales with modern design and full functionality.",
     "projects.taskManager.title": "Task Manager",
-    "projects.taskManager.description": "Task management application with user authentication and real-time updates.",
+    "projects.taskManager.description":
+      "Task management application with user authentication and real-time updates.",
     "projects.pokedexApi.title": "Pokédex API",
-    "projects.pokedexApi.description": "Interactive Pokédx using the Pokémon API with search and detailed information.",
+    "projects.pokedexApi.description":
+      "Interactive Pokédx using the Pokémon API with search and detailed information.",
     "projects.openWeather.title": "OpenWeather API",
-    "projects.openWeather.description": "Weather application with real-time data and forecasts using OpenWeather API.",
+    "projects.openWeather.description":
+      "Weather application with real-time data and forecasts using OpenWeather API.",
     "projects.movieCatalog.title": "Movie Catalog",
     "projects.movieCatalog.description":
       "Movie catalog with search, filters, and detailed information using movie APIs.",
     "projects.driveApp.title": "Drive - Find Your Car",
-    "projects.driveApp.description": "Car search platform with advanced filters and detailed vehicle information.",
+    "projects.driveApp.description":
+      "Car search platform with advanced filters and detailed vehicle information.",
     "projects.cloudPage.title": "Cloud Page",
-    "projects.cloudPage.description": "Modern landing page with cloud services and responsive design.",
+    "projects.cloudPage.description":
+      "Modern landing page with cloud services and responsive design.",
     "projects.code": "Code",
     "projects.liveDemo": "Live Demo",
 
@@ -134,7 +148,8 @@ const translations = {
     // Hero Section
     "hero.role": "Desarrollador Web",
     "hero.greeting": "Hola, soy",
-    "hero.description": "Creo experiencias digitales excepcionales con código, creatividad y pasión por la innovación.",
+    "hero.description":
+      "Creo experiencias digitales excepcionales con código, creatividad y pasión por la innovación.",
     "hero.viewProjects": "Ver Proyectos",
     "hero.contactMe": "Contáctame",
 
@@ -181,7 +196,8 @@ const translations = {
     "projects.driveApp.description":
       "Plataforma de búsqueda de autos con filtros avanzados e información detallada de vehículos.",
     "projects.cloudPage.title": "Cloud Page",
-    "projects.cloudPage.description": "Landing page moderna con servicios en la nube y diseño responsivo.",
+    "projects.cloudPage.description":
+      "Landing page moderna con servicios en la nube y diseño responsivo.",
     "projects.code": "Código",
     "projects.liveDemo": "Demo en Vivo",
 
@@ -233,55 +249,59 @@ const translations = {
     // Footer
     "footer.rights": "Todos los derechos reservados.",
   },
-}
+};
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("es")
-  const [isClient, setIsClient] = useState(false)
+  const [language, setLanguage] = useState<Language>("es");
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-    const savedLanguage = localStorage.getItem("language") as Language
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "es")) {
-      setLanguage(savedLanguage)
+    setIsClient(true);
+    const savedLanguage = localStorage.getItem("language") as Language;
+    if (savedLanguage === "en" || savedLanguage === "es") {
+      setLanguage(savedLanguage);
     }
-  }, [])
+  }, []);
 
   const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang)
+    setLanguage(lang);
     if (isClient) {
-      localStorage.setItem("language", lang)
+      localStorage.setItem("language", lang);
     }
-  }
+  };
 
   const t = (key: string): string => {
-    return translations[language][key as keyof (typeof translations)[typeof language]] || key
-  }
+    return (translations[language] as Record<string, string>)[key] ?? key;
+  };
+
+  if (!isClient) return null; // Evita renderizar en SSR o antes del montaje
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage: handleSetLanguage, t }}
+    >
       {children}
     </LanguageContext.Provider>
-  )
+  );
 }
 
-export function useLanguage() {
-  const context = useContext(LanguageContext)
-  if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider")
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error("useLanguage debe usarse dentro de LanguageProvider");
   }
-  return context
-}
+  return context;
+};
 
 // Safe hook that returns default values if not within provider
 export function useLanguageSafe() {
-  const context = useContext(LanguageContext)
+  const context = useContext(LanguageContext);
   if (context === undefined) {
     return {
       language: "es" as Language,
       setLanguage: () => {},
       t: (key: string) => key,
-    }
+    };
   }
-  return context
+  return context;
 }
