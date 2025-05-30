@@ -270,7 +270,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const t = (key: string): string => {
+  const translate = (key: string): string => {
     return (translations[language] as Record<string, string>)[key] ?? key;
   };
 
@@ -278,7 +278,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   return (
     <LanguageContext.Provider
-      value={{ language, setLanguage: handleSetLanguage, t }}
+      value={{ language, setLanguage: handleSetLanguage, t: translate }}
     >
       {children}
     </LanguageContext.Provider>
