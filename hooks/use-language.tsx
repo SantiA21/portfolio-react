@@ -285,10 +285,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export const useLanguage = () => {
+export const useLanguageSafe = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useLanguage debe usarse dentro de LanguageProvider");
+    throw new Error("useLanguageSafe debe usarse dentro de LanguageProvider");
   }
   return context;
 };

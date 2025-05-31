@@ -2,10 +2,10 @@
 
 import { ProjectCard } from "@/components/project-card"
 import { SectionHeading } from "@/components/section-heading"
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 
 export function ProjectsSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe()
 
   return (
     <section id="projects" className="py-32 relative">

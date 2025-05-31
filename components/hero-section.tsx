@@ -3,11 +3,11 @@
 import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe()
 
   const handleEmailClick = () => {
     window.location.href = "mailto:santiago.n.almiron@gmail.com"

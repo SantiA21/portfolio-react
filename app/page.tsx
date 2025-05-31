@@ -1,21 +1,33 @@
-"use client"
+"use client";
 
-import { SkillBadge } from "@/components/skill-badge"
-import { Timeline } from "@/components/timeline"
-import { EducationTimeline } from "@/components/education-timeline"
-import { FloatingNav } from "@/components/floating-nav"
-import { MouseFollower } from "@/components/mouse-follower"
-import { ScrollProgress } from "@/components/scroll-progress"
-import { SectionHeading } from "@/components/section-heading"
-import { LanguageSelector } from "@/components/language-selector"
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { ContactSection } from "@/components/contact-section"
-import { useLanguage } from "@/hooks/use-language"
-import Link from "next/link"
-import { Github, Linkedin, Mail, Database, Globe, Palette, Zap, Coffee, Settings, Layers, Cpu } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { SkillBadge } from "@/components/skill-badge";
+import { Timeline } from "@/components/timeline";
+import { EducationTimeline } from "@/components/education-timeline";
+import { FloatingNav } from "@/components/floating-nav";
+import { MouseFollower } from "@/components/mouse-follower";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { SectionHeading } from "@/components/section-heading";
+import { LanguageSelector } from "@/components/language-selector";
+import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { ProjectsSection } from "@/components/projects-section";
+import { ContactSection } from "@/components/contact-section";
+import { useLanguageSafe } from "@/hooks/use-language";
+import Link from "next/link";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Database,
+  Globe,
+  Palette,
+  Zap,
+  Coffee,
+  Settings,
+  Layers,
+  Cpu,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Componentes SVG personalizados para Python y PHP
 const PythonIcon = () => (
@@ -23,7 +35,7 @@ const PythonIcon = () => (
     <path d="M12 2C8.5 2 6 4.5 6 8v2c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V8c0-3.5-2.5-6-6-6zm-2 6c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
     <path d="M12 22c3.5 0 6-2.5 6-6v-2c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2c0 3.5 2.5 6 6 6zm2-6c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
   </svg>
-)
+);
 
 const PHPIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -48,12 +60,12 @@ const PHPIcon = () => (
     <circle cx="10" cy="8.5" r="0.4" fill="currentColor" />
     <circle cx="14" cy="8.5" r="0.4" fill="currentColor" />
   </svg>
-)
+);
 
 export default function Portfolio() {
   const handleEmailClick = () => {
-    window.location.href = "mailto:santiago.n.almiron@gmail.com"
-  }
+    window.location.href = "mailto:santiago.n.almiron@gmail.com";
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
@@ -90,11 +102,11 @@ export default function Portfolio() {
       <ContactSection />
       <FooterSection />
     </div>
-  )
+  );
 }
 
 function SkillsSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe();
 
   const skills = [
     {
@@ -147,7 +159,7 @@ function SkillsSection() {
       icon: <Layers className="w-6 h-6" />,
       color: "#92003B",
     },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-32 relative">
@@ -157,20 +169,28 @@ function SkillsSection() {
       </div>
 
       <div className="container relative z-10">
-        <SectionHeading title={t("skills.title")} subtitle={t("skills.subtitle")} />
+        <SectionHeading
+          title={t("skills.title")}
+          subtitle={t("skills.subtitle")}
+        />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-16">
           {skills.map((skill, index) => (
-            <SkillBadge key={skill.name} name={skill.name} icon={skill.icon} color={skill.color} />
+            <SkillBadge
+              key={skill.name}
+              name={skill.name}
+              icon={skill.icon}
+              color={skill.color}
+            />
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function ExperienceSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe();
 
   return (
     <section id="experience" className="py-32 relative">
@@ -180,18 +200,21 @@ function ExperienceSection() {
       </div>
 
       <div className="container relative z-10">
-        <SectionHeading title={t("experience.title")} subtitle={t("experience.subtitle")} />
+        <SectionHeading
+          title={t("experience.title")}
+          subtitle={t("experience.subtitle")}
+        />
 
         <div className="mt-16">
           <Timeline />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function EducationSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe();
 
   return (
     <section id="education" className="py-32 relative">
@@ -201,22 +224,25 @@ function EducationSection() {
       </div>
 
       <div className="container relative z-10">
-        <SectionHeading title={t("education.title")} subtitle={t("education.subtitle")} />
+        <SectionHeading
+          title={t("education.title")}
+          subtitle={t("education.subtitle")}
+        />
 
         <div className="mt-16">
           <EducationTimeline />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FooterSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe();
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:santiago.n.almiron@gmail.com"
-  }
+    window.location.href = "mailto:santiago.n.almiron@gmail.com";
+  };
 
   return (
     <footer className="border-t border-zinc-800 py-12">
@@ -227,7 +253,11 @@ function FooterSection() {
           </p>
         </div>
         <div className="flex gap-4">
-          <Link href="https://github.com/SantiA21" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/SantiA21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="ghost"
               size="icon"
@@ -237,7 +267,11 @@ function FooterSection() {
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://www.linkedin.com/in/almiron-santiago-nahuel/" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://www.linkedin.com/in/almiron-santiago-nahuel/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="ghost"
               size="icon"
@@ -259,5 +293,5 @@ function FooterSection() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

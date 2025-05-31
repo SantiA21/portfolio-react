@@ -7,13 +7,13 @@ import { Menu, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { LanguageSelector } from "@/components/language-selector"
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 import { useMobile } from "@/hooks/use-mobile"
 
 export function FloatingNav() {
   const [isVisible, setIsVisible] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe()
   const isMobile = useMobile()
 
   useEffect(() => {

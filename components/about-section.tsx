@@ -3,11 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 import { ExternalLink } from "lucide-react"
 
 export function AboutSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe()
 
   const handleViewCV = () => {
     // Abrir el CV en una nueva pestaña

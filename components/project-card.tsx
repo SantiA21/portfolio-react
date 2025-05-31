@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 
 interface ProjectCardProps {
   title: string
@@ -20,7 +20,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
-  const { t } = useLanguage()
+  const { t } = useLanguageSafe()
 
   return (
     <motion.div

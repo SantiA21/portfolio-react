@@ -1,10 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 
 export function LanguageSelector() {
-  const { language, setLanguage } = useLanguage()
+  const { language, setLanguage } = useLanguageSafe()
 
   return (
     <div className="flex items-center gap-1 bg-zinc-800/50 rounded-full p-1">

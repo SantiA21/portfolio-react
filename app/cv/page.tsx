@@ -1,9 +1,9 @@
 "use client"
 
-import { useLanguage } from "@/hooks/use-language"
+import { useLanguageSafe } from "@/hooks/use-language"
 
 export default function CVPage() {
-  const { language } = useLanguage()
+  const { language } = useLanguageSafe()
 
   const cvData = {
     es: {
