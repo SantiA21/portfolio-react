@@ -68,11 +68,12 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden ">
-      <MouseFollower />
-      <ScrollProgress />
-      <FloatingNav />
-      <div className="max-w-7xl mx-auto px-4">
+    <body className="bg-zinc-900 text-white">
+      <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden ">
+        <MouseFollower />
+        <ScrollProgress />
+        <FloatingNav />
+
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute top-6 right-6 z-50">
@@ -93,16 +94,17 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <EducationSection />
-        <ContactSection />
-        <FooterSection />
+        <div className="max-w-7xl mx-auto px-4">
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ExperienceSection />
+          <EducationSection />
+          <ContactSection />
+          <FooterSection />
+        </div>
       </div>
-    </div>
+    </body>
   );
 }
 

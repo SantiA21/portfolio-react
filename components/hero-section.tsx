@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/hooks/use-language"
-import { motion } from "framer-motion"
+import Link from "next/link";
+import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/hooks/use-language";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:santiago.n.almiron@gmail.com"
-  }
+    window.location.href = "mailto:santiago.n.almiron@gmail.com";
+  };
 
   return (
     <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -28,7 +28,9 @@ export function HeroSection() {
             Santiago Almirón
           </span>
         </h1>
-        <p className="text-xl text-zinc-400 max-w-[600px]">{t("hero.description")}</p>
+        <p className="text-xl text-zinc-400 max-w-[600px]">
+          {t("hero.description")}
+        </p>
         <div className="flex flex-wrap gap-4 pt-4">
           <Button className="relative overflow-hidden group bg-gradient-to-r from-blue-500 to-cyan-500 border-0">
             <span className="relative z-10 flex items-center">
@@ -46,7 +48,11 @@ export function HeroSection() {
           </Button>
         </div>
         <div className="flex gap-4 pt-4">
-          <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/SantiA21"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="ghost"
               size="icon"
@@ -56,7 +62,11 @@ export function HeroSection() {
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://www.linkedin.com/in/santiagoalmiron/" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://www.linkedin.com/in/santiagoalmiron/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="ghost"
               size="icon"
@@ -64,16 +74,6 @@ export function HeroSection() {
             >
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
-            </Button>
-          </Link>
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-            >
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
             </Button>
           </Link>
           <Button
@@ -93,7 +93,7 @@ export function HeroSection() {
         <IsometricDesk />
       </div>
     </div>
-  )
+  );
 }
 
 function IsometricDesk() {
@@ -197,8 +197,20 @@ function IsometricDesk() {
           transition={{ duration: 0.6, delay: 1.6 }}
         >
           <ellipse cx="120" cy="190" rx="12" ry="8" fill="#8b4513" />
-          <rect x="108" y="182" width="24" height="16" fill="url(#coffeeGradient)" rx="2" />
-          <path d="M 132 185 Q 140 185 140 192 Q 140 199 132 199" fill="none" stroke="#6b7280" strokeWidth="2" />
+          <rect
+            x="108"
+            y="182"
+            width="24"
+            height="16"
+            fill="url(#coffeeGradient)"
+            rx="2"
+          />
+          <path
+            d="M 132 185 Q 140 185 140 192 Q 140 199 132 199"
+            fill="none"
+            stroke="#6b7280"
+            strokeWidth="2"
+          />
         </motion.g>
 
         {/* Planta */}
@@ -210,8 +222,22 @@ function IsometricDesk() {
           {/* Maceta */}
           <path d="M 320 180 L 340 180 L 345 200 L 315 200 Z" fill="#8b4513" />
           {/* Hojas */}
-          <ellipse cx="325" cy="170" rx="8" ry="15" fill="#22c55e" transform="rotate(-20 325 170)" />
-          <ellipse cx="335" cy="165" rx="6" ry="12" fill="#16a34a" transform="rotate(15 335 165)" />
+          <ellipse
+            cx="325"
+            cy="170"
+            rx="8"
+            ry="15"
+            fill="#22c55e"
+            transform="rotate(-20 325 170)"
+          />
+          <ellipse
+            cx="335"
+            cy="165"
+            rx="6"
+            ry="12"
+            fill="#16a34a"
+            transform="rotate(15 335 165)"
+          />
           <ellipse cx="330" cy="175" rx="7" ry="10" fill="#15803d" />
         </motion.g>
 
@@ -235,21 +261,76 @@ function IsometricDesk() {
           {/* Base */}
           <circle cx="100" cy="200" r="8" fill="#6b7280" />
           {/* Brazo */}
-          <line x1="100" y1="200" x2="90" y2="150" stroke="#6b7280" strokeWidth="3" />
+          <line
+            x1="100"
+            y1="200"
+            x2="90"
+            y2="150"
+            stroke="#6b7280"
+            strokeWidth="3"
+          />
           {/* Pantalla */}
-          <path d="M 85 145 L 105 140 L 100 155 L 80 160 Z" fill="url(#lampGradient)" />
+          <path
+            d="M 85 145 L 105 140 L 100 155 L 80 160 Z"
+            fill="url(#lampGradient)"
+          />
           {/* Luz */}
-          <circle cx="92" cy="150" r="15" fill="url(#lightGradient)" opacity="0.3" />
+          <circle
+            cx="92"
+            cy="150"
+            r="15"
+            fill="url(#lightGradient)"
+            opacity="0.3"
+          />
         </motion.g>
 
         {/* Código en la pantalla */}
-        <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 2.5 }}>
+        <motion.g
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2.5 }}
+        >
           <rect x="185" y="125" width="70" height="50" fill="#1a1a1a" rx="2" />
-          <line x1="190" y1="130" x2="240" y2="130" stroke="#3b82f6" strokeWidth="1" />
-          <line x1="190" y1="135" x2="230" y2="135" stroke="#22c55e" strokeWidth="1" />
-          <line x1="190" y1="140" x2="245" y2="140" stroke="#f59e0b" strokeWidth="1" />
-          <line x1="190" y1="145" x2="220" y2="145" stroke="#ef4444" strokeWidth="1" />
-          <line x1="190" y1="150" x2="235" y2="150" stroke="#8b5cf6" strokeWidth="1" />
+          <line
+            x1="190"
+            y1="130"
+            x2="240"
+            y2="130"
+            stroke="#3b82f6"
+            strokeWidth="1"
+          />
+          <line
+            x1="190"
+            y1="135"
+            x2="230"
+            y2="135"
+            stroke="#22c55e"
+            strokeWidth="1"
+          />
+          <line
+            x1="190"
+            y1="140"
+            x2="245"
+            y2="140"
+            stroke="#f59e0b"
+            strokeWidth="1"
+          />
+          <line
+            x1="190"
+            y1="145"
+            x2="220"
+            y2="145"
+            stroke="#ef4444"
+            strokeWidth="1"
+          />
+          <line
+            x1="190"
+            y1="150"
+            x2="235"
+            y2="150"
+            stroke="#8b5cf6"
+            strokeWidth="1"
+          />
         </motion.g>
 
         {/* Partículas flotantes */}
@@ -280,19 +361,43 @@ function IsometricDesk() {
             <stop offset="0%" stopColor="#8b7355" />
             <stop offset="100%" stopColor="#6b5b47" />
           </linearGradient>
-          <linearGradient id="deskSideGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="deskSideGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#6b5b47" />
             <stop offset="100%" stopColor="#5a4a37" />
           </linearGradient>
-          <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="screenGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#1a1a1a" />
             <stop offset="100%" stopColor="#2d2d2d" />
           </linearGradient>
-          <linearGradient id="keyboardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="keyboardGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#4a5568" />
             <stop offset="100%" stopColor="#2d3748" />
           </linearGradient>
-          <linearGradient id="coffeeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="coffeeGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#f7fafc" />
             <stop offset="100%" stopColor="#e2e8f0" />
           </linearGradient>
@@ -307,5 +412,5 @@ function IsometricDesk() {
         </defs>
       </svg>
     </div>
-  )
+  );
 }
