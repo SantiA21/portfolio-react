@@ -1,18 +1,20 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Github, Linkedin, Mail, MapPin, Calendar } from "lucide-react"
-import { SectionHeading } from "@/components/section-heading"
-import { GlassmorphicCard } from "@/components/glassmorphic-card"
-import { useLanguage } from "@/hooks/use-language"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { Github, Linkedin, Mail, MapPin, Calendar } from "lucide-react";
+import { SectionHeading } from "@/components/section-heading";
+import { GlassmorphicCard } from "@/components/glassmorphic-card";
+import { useLanguage } from "@/hooks/use-language";
+import { Button } from "@/components/ui/button";
+
+import { handleViewCV } from "./about-section";
 
 export function ContactSection() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:santiago.n.almiron@gmail.com"
-  }
+    window.location.href = "mailto:santiago.n.almiron@gmail.com";
+  };
 
   const contactMethods = [
     {
@@ -47,7 +49,7 @@ export function ContactSection() {
       color: "text-green-400",
       bgColor: "bg-green-500/10",
     },
-  ]
+  ];
 
   return (
     <section id="contact" className="py-32 relative">
@@ -57,26 +59,35 @@ export function ContactSection() {
       </div>
 
       <div className="container relative z-10">
-        <SectionHeading title={t("contact.title")} subtitle={t("contact.subtitle")} />
+        <SectionHeading
+          title={t("contact.title")}
+          subtitle={t("contact.subtitle")}
+        />
 
         <div className="max-w-4xl mx-auto mt-16">
           {/* Información principal */}
           <GlassmorphicCard>
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-4">{t("contact.letsConnect")}</h3>
-              <p className="text-xl text-zinc-400 max-w-2xl mx-auto">{t("contact.description")}</p>
+              <h3 className="text-3xl font-bold mb-4">
+                {t("contact.letsConnect")}
+              </h3>
+              <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+                {t("contact.description")}
+              </p>
             </div>
 
             {/* Estado actual */}
             <div className="flex items-center justify-center gap-3 mb-8 p-4 rounded-lg bg-green-500/10 border border-green-500/20">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-green-400 font-medium">{t("contact.availableForWork")}</span>
+              <span className="text-green-400 font-medium">
+                {t("contact.availableForWork")}
+              </span>
             </div>
 
             {/* Métodos de contacto */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {contactMethods.map((method, index) => {
-                const IconComponent = method.icon
+                const IconComponent = method.icon;
                 const content = (
                   <div
                     key={index}
@@ -89,11 +100,15 @@ export function ContactSection() {
                       <IconComponent className={`h-6 w-6 ${method.color}`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-sm text-zinc-500 mb-1">{method.label}</div>
-                      <div className="font-medium text-white truncate">{method.value}</div>
+                      <div className="text-sm text-zinc-500 mb-1">
+                        {method.label}
+                      </div>
+                      <div className="font-medium text-white truncate">
+                        {method.value}
+                      </div>
                     </div>
                   </div>
-                )
+                );
 
                 return method.href ? (
                   <Link
@@ -106,14 +121,17 @@ export function ContactSection() {
                     {content}
                   </Link>
                 ) : method.onClick ? (
-                  <div key={index} className="block hover:scale-105 transition-transform duration-300">
+                  <div
+                    key={index}
+                    className="block hover:scale-105 transition-transform duration-300"
+                  >
                     {content}
                   </div>
                 ) : (
                   <div key={index} className="block">
                     {content}
                   </div>
-                )
+                );
               })}
             </div>
 
@@ -127,23 +145,27 @@ export function ContactSection() {
                 {t("contact.sendEmail")}
               </Button>
               <Button
+                onClick={handleViewCV}
                 variant="outline"
                 className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 px-8 py-3"
-                asChild
               >
-                <Link href="/cv" target="_blank">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  {t("contact.viewResume")}
-                </Link>
+                <Calendar className="mr-2 h-5 w-5" />
+                {t("contact.viewResume")}
               </Button>
             </div>
           </GlassmorphicCard>
 
           {/* Redes sociales destacadas */}
           <div className="mt-12 text-center">
-            <h4 className="text-xl font-medium mb-6">{t("contact.followMe")}</h4>
+            <h4 className="text-xl font-medium mb-6">
+              {t("contact.followMe")}
+            </h4>
             <div className="flex justify-center gap-4">
-              <Link href="https://github.com/SantiA21" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/SantiA21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="ghost"
                   size="lg"
@@ -181,5 +203,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,33 +1,35 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { LanguageSelector } from "@/components/language-selector"
-import { useLanguageSafe } from "@/hooks/use-language"
-import { useMobile } from "@/hooks/use-mobile"
+import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "@/components/language-selector";
+import { useLanguageSafe } from "@/hooks/use-language";
+import { useMobile } from "@/hooks/use-mobile";
+
+import { handleViewCV } from "./about-section";
 
 export function FloatingNav() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
-  const { t } = useLanguageSafe()
-  const isMobile = useMobile()
+  const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguageSafe();
+  const isMobile = useMobile();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        setIsVisible(true)
+        setIsVisible(true);
       } else {
-        setIsVisible(false)
+        setIsVisible(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: t("nav.about"), href: "#about" },
@@ -36,13 +38,13 @@ export function FloatingNav() {
     { name: t("nav.experience"), href: "#experience" },
     { name: t("nav.education"), href: "#education" },
     { name: t("nav.contact"), href: "#contact" },
-  ]
+  ];
 
   const handleNavClick = () => {
     if (isMobile) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }
+  };
 
   return (
     <>
@@ -65,7 +67,11 @@ export function FloatingNav() {
                   className="text-zinc-400 hover:text-white hover:bg-zinc-700/50"
                   onClick={() => setIsOpen(!isOpen)}
                 >
-                  {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                  {isOpen ? (
+                    <X className="h-5 w-5" />
+                  ) : (
+                    <Menu className="h-5 w-5" />
+                  )}
                 </Button>
               </div>
             </div>
@@ -82,6 +88,7 @@ export function FloatingNav() {
                 </Link>
               ))}
               <Button
+                onClick={handleViewCV}
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-500 hover:to-blue-500 border-0"
               >
@@ -121,5 +128,5 @@ export function FloatingNav() {
         </motion.div>
       )}
     </>
-  )
+  );
 }
