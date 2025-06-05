@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { useLanguageSafe } from "@/hooks/use-language"
+import { useLanguage } from "@/hooks/use-language"
 
 interface FormData {
   name: string
@@ -27,7 +27,7 @@ interface FormErrors {
 
 export function ContactForm() {
   const { toast } = useToast()
-  const { t } = useLanguageSafe()
+  const { t } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     name: "",

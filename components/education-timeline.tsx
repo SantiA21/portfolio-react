@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion"
 import { useMobile } from "@/hooks/use-mobile"
-import { useLanguageSafe } from "@/hooks/use-language"
+import { useLanguage } from "@/hooks/use-language"
 
 export function EducationTimeline() {
   const isMobile = useMobile()
-  const { t } = useLanguageSafe()
+  const { t } = useLanguage()
 
   const education = [
     {

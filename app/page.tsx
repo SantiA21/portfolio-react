@@ -12,7 +12,7 @@ import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ContactSection } from "@/components/contact-section";
-import { useLanguageSafe } from "@/hooks/use-language";
+import { useLanguage } from "@/hooks/use-language";
 import Link from "next/link";
 import {
   Github,
@@ -68,45 +68,46 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden ">
       <MouseFollower />
       <ScrollProgress />
       <FloatingNav />
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute top-6 right-6 z-50">
-          <LanguageSelector />
-        </div>
-
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
-
-        <HeroSection />
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center items-start p-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse"></div>
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute top-6 right-6 z-50">
+            <LanguageSelector />
           </div>
-        </div>
-      </section>
 
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <EducationSection />
-      <ContactSection />
-      <FooterSection />
+          <div className="absolute inset-0 z-0">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          </div>
+
+          <HeroSection />
+
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center items-start p-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse"></div>
+            </div>
+          </div>
+        </section>
+
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <EducationSection />
+        <ContactSection />
+        <FooterSection />
+      </div>
     </div>
   );
 }
 
 function SkillsSection() {
-  const { t } = useLanguageSafe();
+  const { t } = useLanguage();
 
   const skills = [
     {
@@ -190,7 +191,7 @@ function SkillsSection() {
 }
 
 function ExperienceSection() {
-  const { t } = useLanguageSafe();
+  const { t } = useLanguage();
 
   return (
     <section id="experience" className="py-32 relative">
@@ -214,7 +215,7 @@ function ExperienceSection() {
 }
 
 function EducationSection() {
-  const { t } = useLanguageSafe();
+  const { t } = useLanguage();
 
   return (
     <section id="education" className="py-32 relative">
@@ -238,7 +239,7 @@ function EducationSection() {
 }
 
 function FooterSection() {
-  const { t } = useLanguageSafe();
+  const { t } = useLanguage();
 
   const handleEmailClick = () => {
     window.location.href = "mailto:santiago.n.almiron@gmail.com";

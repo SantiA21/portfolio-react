@@ -4,11 +4,11 @@ import Link from "next/link"
 import { Github, Linkedin, Mail, MapPin, Calendar } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
-import { useLanguageSafe } from "@/hooks/use-language"
+import { useLanguage } from "@/hooks/use-language"
 import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
-  const { t } = useLanguageSafe()
+  const { t } = useLanguage()
 
   const handleEmailClick = () => {
     window.location.href = "mailto:santiago.n.almiron@gmail.com"
